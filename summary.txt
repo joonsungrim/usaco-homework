@@ -1,30 +1,7 @@
-Cow gymnastics
-    with open("gymnastics.in") as read:
-        session_num, cow_num = [int(i) for i in read.readline().split()]
-        sessions = []
-        for _ in range(session_num):
-            sessions.append([int(c) - 1 for c in read.readline().split()])
-
-    better_pairs = 0
-    for c1 in range(cow_num):
-        for c2 in range(cow_num):
-            if c1 == c2:
-                continue
-
-            for s in sessions:
-                if s.index(c1) < s.index(c2):
-                    break
-            else:
-                better_pairs += 1
-
-    print(better_pairs, file=open("gymnastics.out", "w"))
-
-    - c1과 c2는 range(cow_num)에 속해있는 숫자
-    - c1과 c2가 만드는 모든 경우의 숫자 쌍을 봄
-    - c1과 c2가 같은 수인지 확인
-        - 같은 수가 아니라면 c1이 항상 c2보다 높은 순위에 위치하고 있는지 확인
-            - 한번이라도 c1의 순위가 c2보다 낮다면 break
-            - 항상 c1의 순위가 더 높으면 better_pairs에 1을 더함
-    - 마지막에 better_pairs를 print
-    - time complexity = O(n^4)
-        - for loop 3번 + index
+Complete search
+    - Complete search(Brute force): 정답의 모든 가능한 경우를 확인하는 것
+    - 시간 복잡도는 O(n^2) 이상 --> n의 값이 크지 않을 때 사용하는 것이 좋음
+    - 재귀(recursion)를 통해 complete research를 실행할 수도 있음
+        - subset (그룹으로 나누는 것)
+        - permutation (순서를 찾는 것)
+        - backtracking (잘못된 길로 갔을 때 전으로 돌아가는 것)
