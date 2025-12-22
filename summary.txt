@@ -1,7 +1,0 @@
-Complete search
-    - Complete search(Brute force): 정답의 모든 가능한 경우를 확인하는 것
-    - 시간 복잡도는 O(n^2) 이상 --> n의 값이 크지 않을 때 사용하는 것이 좋음
-    - 재귀(recursion)를 통해 complete research를 실행할 수도 있음
-        - subset (그룹으로 나누는 것)
-        - permutation (순서를 찾는 것)
-        - backtracking (잘못된 길로 갔을 때 전으로 돌아가는 것)
